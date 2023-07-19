@@ -1,0 +1,723 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default Vairiables */
+:root {
+    --font-family: 'Manrope', sans-serif;
+  
+    --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+    --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
+    
+    --color-bg: #040C18;
+    --color-footer : #031B34;
+    --color-blog: #042c54;
+    --color-text: #81AFDD;
+    --color-subtext: #FF8A71;
+  }
+
+
+/* NavBar CSS */
+.gpt3__navbar {
+    @apply flex justify-between items-center py-8 px-24;
+}
+
+.gpt3__navbar-links {
+    @apply flex justify-start items-center flex-1;
+}
+
+.gpt3__navbar-links_logo {
+    @apply mr-8;
+}
+
+.gpt3__navbar-links_logo img {
+    @apply w-16 h-4;
+}
+
+.gpt3__navbar-links_container {
+    @apply flex flex-row;
+}
+
+.gpt3__navbar-sign {
+    @apply flex justify-end items-center;
+}
+
+.gpt3__navbar-links_container p,
+.gpt3__navbar-sign p,
+.gpt3__navbar-menu_container p {
+    @apply text-white font-medium text-lg capitalize my-0 mx-4 cursor-pointer;
+}
+
+.gpt3__navbar-sign button,
+.gpt3__navbar-menu_container button {
+    @apply py-2 px-4 text-white bg-orange-600 font-medium text-lg border-none outline-none cursor-pointer rounded-md;
+}
+
+.gpt3__navbar-menu {
+    @apply ml-4 hidden relative;
+}
+
+.gpt3__navbar-menu svg {
+    @apply cursor-pointer;
+}
+
+.gpt3__navbar-menu_container {
+    @apply flex justify-end items-end flex-col text-end p-8 absolute right-0 top-10 mt-4 rounded-md;
+    
+    min-width: 210px;
+    box-shadow: 0px 0px 5px rgba(0,0, 0,0.2); 
+    background: var(--color-footer);
+}
+
+.gpt3__navbar-menu_container p {
+    @apply  my-4 mx-0;
+}
+
+.gpt3__navbar-menu_container-links-sign {
+    @apply hidden;
+}
+
+@media screen and (max-width: 1050px) {
+    .gpt3__navbar-links_container {
+        @apply hidden
+    }
+
+    .gpt3__navbar-menu {
+        @apply flex
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gpt3__navbar {
+        @apply py-8 px-16;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .gpt3__navbar {
+        @apply p-8 ;
+    }
+
+    .gpt3__navbar-sign {
+        @apply hidden;
+    }
+
+    .gpt3__navbar-menu_container {
+        @apply top-5;
+    }
+
+    .gpt3__navbar-menu_container-links-sign {
+        @apply block;
+    }
+}
+
+/* Header CSS */
+.gpt3__header {
+    @apply flex flex-row;
+}
+
+.gpt3__header-content {
+    @apply flex-1 flex justify-center items-start flex-col mr-20;
+}
+
+.gpt3__header-content h1 {
+    font-family: var(--font-family);
+    @apply text-6xl font-extrabold tracking-tighter;
+   
+}
+
+.gpt3__header-content p {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    @apply font-normal text-xl mt-6 ;
+}
+
+.gpt3__header-content__input {
+    @apply w-full mt-8 mx-0 mb-4 flex flex-row;
+}
+
+.gpt3__header-content__input input {
+    @apply w-full  font-normal text-xl border-2 border-solid py-0 px-4 outline-none text-white rounded-l;
+    flex: 2;
+    font-family: var(--font-family);
+    background: var(--color-footer);
+    border-color: var(--color-footer);
+}
+
+.gpt3__header-content__input button {
+    @apply w-full font-normal text-xl bg-amber-600 border-2 border-solid border-amber-600 py-0 px-4 text-white cursor-pointer outline-none rounded-l;
+    flex: 0.6;
+    min-height: 50px;
+    font-family: var(--font-family);
+}
+
+.gpt3__header-content__people {
+    @apply w-full flex justify-start items-center flex-row mt-8;
+}
+
+.gpt3__header-content__people img {
+    @apply w-44 h-9;
+}
+
+.gpt3__header-content__people p {
+     font-family: var(--font-family);
+    @apply mt-0 mr-0 ml-4 mb-0 font-medium text-xs text-white text-center;
+}
+
+.gpt3__header-image {
+    @apply flex-1 flex justify-center items-center;
+}
+
+.gpt3__header-image img {
+    @apply w-full h-full;
+}
+
+@media screen and (max-width: 1050px) {
+    .gpt3__header {
+        @apply flex-col;
+    }
+
+    .gpt3__header-content {
+        @apply mt-0 mx-0 mb-12;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .gpt3__header-content h1 {
+        @apply text-5xl;
+    }
+
+    .gpt3__header-content p {
+        @apply text-base;
+    }
+    
+    .gpt3__header-content__people {
+        @apply flex-col;
+    }
+
+    .gpt3__header-content__people p {
+        @apply m-0;
+    }
+
+    .gpt3__header-content__input input,
+    .gpt3__header-content__input button {
+        @apply text-base;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .gpt3__header-content h1 {
+        @apply text-4xl;
+    }
+
+    .gpt3__header-content p {
+        @apply text-sm;
+    }
+
+    .gpt3__header-content__input input,
+    .gpt3__header-content__input button {
+        @apply text-xs;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+/* Brand CSS */
+.gpt3__brand {
+    @apply flex flex-wrap justify-center items-center;
+}
+
+.gpt3__brand div {
+    @apply flex-1 m-4 flex justify-center items-center;
+    max-width: 150px;
+    min-width: 120px;
+}
+
+/* WhatGPT3 CSS */
+.gpt3__whatgpt3 {
+    @apply flex flex-col p-8 ;
+    background: var(--color-footer);
+
+    /* ff 3.6+ */
+    background:-moz-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.gpt3__whatgpt3-feature {
+    @apply flex;
+}
+
+/* Customizing feature component as per needs */
+.gpt3__whatgpt3-feature .gpt3__features-container__feature {
+    @apply m-0;
+}
+
+/* Customizing feature component as per needs */
+.gpt3__whatgpt3-feature .gpt3__features-container_feature-text {
+    max-width: 700px;
+}
+
+.gpt3__whatgpt3-heading {
+    @apply flex flex-row justify-between items-center mt-16 mx-0 mb-8;
+}
+
+.gpt3__whatgpt3-heading h1 {
+    @apply text-4xl font-extrabold ;
+    font-family: var(--font-family);
+    max-width: 510px;
+}
+
+.gpt3__whatgpt3-heading p {
+    @apply font-medium text-base cursor-pointer;
+    font-family: var(--font-family);
+    color: var(--color-subtext);
+}
+
+.gpt3__whatgpt3-container {
+    @apply flex flex-wrap flex-row mt-8;
+}
+
+/* Customizing feature component as per needs */
+.gpt3__whatgpt3-container .gpt3__features-container__feature {
+    @apply flex-1 m-4 flex-col;
+
+    min-width: 210px;
+    display: unset;
+}
+
+/* Customizing feature component as per needs */
+.gpt3__whatgpt3-container .gpt3__features-container_feature-text {
+    @apply mt-2;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 850px) {
+    .gpt3__whatgpt3-heading {
+        @apply flex-col items-start mb-0;
+    }
+
+    .gpt3__whatgpt3-heading p {
+        @apply mt-4;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* Customizing feature component as per needs */
+    .gpt3__whatgpt3-feature .gpt3__features-container__feature {
+        @apply flex-col;
+    }
+
+    /* Customizing feature component as per needs */
+    .gpt3__whatgpt3-feature .gpt3__features-container_feature-text {
+        @apply mt-2;
+    }
+
+    .gpt3__whatgpt3-heading h1 {
+        @apply text-3xl;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    /* Customizing feature component as per needs */
+    .gpt3__whatgpt3-container .gpt3__features-container__feature {
+        @apply my-4 mx-0 min-w-full;
+    }
+}
+
+/* Feature CSS */
+.gpt3__features-container__feature {
+    @apply w-full flex justify-between items-start flex-row m-4;
+}
+
+.gpt3__features-container__feature-title {
+    @apply flex-1 mr-8;
+    max-width: 180px;
+}
+
+.gpt3__features-container__feature-title h1 {
+    font-family: var(--font-family);
+    @apply font-extrabold text-lg tracking-tighter text-white;
+}
+
+.gpt3__features-container__feature-title div {
+    @apply w-9 h-1 mb-1;
+    background: var(--gradient-bar);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gpt3__features-container_feature-text {
+    flex: 2;
+    max-width: 390px;
+    @apply flex;
+}
+
+.gpt3__features-container_feature-text p {
+    font-family: var(--font-family);
+    @apply font-medium text-sm;
+    color: var(--color-text);
+}
+
+@media screen and (max-width: 550px) {
+    .gpt3__features-container__feature-title h1 {
+        @apply text-sm;
+    }
+
+    .gpt3__features-container_feature-text p {
+        @apply text-xs;
+    }
+
+    .gpt3__features-container__feature {
+        @apply my-4 mx-0;
+    }
+}
+
+/* Features CSS */
+.gpt3__features {
+    @apply w-full flex justify-between flex-row;
+}
+
+.gpt3__features-heading {
+    @apply flex-1 flex justify-start items-start flex-col text-left mr-20;
+}
+
+.gpt3__features-heading h1 {
+    @apply text-4xl font-extrabold;
+    font-family: var(--font-family);
+}
+
+.gpt3__features-heading p {
+    color: var(--color-subtext);
+    font-family: var(--font-family);
+    @apply text-base font-medium mt-8;
+}
+
+.gpt3__features-container {
+    flex: 1.5;
+    @apply flex justify-start items-center flex-col;
+}
+
+@media screen and (max-width: 990px) {
+    .gpt3__features {
+        @apply flex-col;
+    }
+
+    .gpt3__features-heading {
+        @apply mt-0 mr-0 mb-8 ml-0;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .gpt3__features-heading h1 {
+        @apply text-3xl;
+    }
+}
+
+/* Possibility CSS */
+
+.gpt3__possibility {
+    @apply flex flex-row;
+}
+
+.gpt3__possibility-image {
+    @apply flex-1 flex justify-start items-center mr-8;
+}
+
+.gpt3__possibility-image img {
+    @apply w-full h-full;
+}
+
+.gpt3__possibility-content {
+    @apply flex-1 flex justify-end items-start flex-col;
+}
+
+.gpt3__possibility-content h4 {
+    font-family: var(--font-family);
+    @apply font-medium text-base text-cyan-300;
+}
+
+.gpt3__possibility-content h4:last-child {
+    @applt text-orange-500;
+}
+
+.gpt3__possibility-content h1 {
+    font-family: var(--font-family);
+    @apply font-extrabold text-4xl my-4 mx-0;
+}
+
+.gpt3__possibility-content p {
+    color: var(--color-text);
+    font-family: var(--font-family);
+    @apply font-normal text-base mb-8;
+}
+
+@media screen and (max-width: 950px) {
+    .gpt3__possibility {
+        @apply flex-col;
+    }
+
+    .gpt3__possibility-image {
+        @apply my-4 mx-0;
+    }
+
+    .gpt3__possibility-image img {
+        width: unset;
+        height: unset;
+    }
+
+    .gpt3__possibility-content {
+        @apply mt-8;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gpt3__possibility-image img {
+        @apply w-full h-full;
+    }
+}
+
+/* CallToAction CSS */
+.gpt3__cta {
+    @apply flex justify-between items-center flex-row p-8 m-16 rounded-2xl;
+    background: var(--gradient-bar)
+}
+
+.gpt3__cta-content {
+    @apply flex flex-col text-left text-white;
+}
+
+.gpt3__cta-content p {
+    font-family: var(--font-family);
+    @apply text-xs font-medium;
+}
+
+.gpt3__cta-content h3 {
+    font-family: var(--font-family);
+    @apply text-2xl font-extrabold;
+}
+
+.gpt3__cta-btn {
+    @apply flex justify-center items-center ml-8;
+}
+
+.gpt3__cta-btn button {
+    @apply bg-black text-white font-bold text-lg py-2 px-4 rounded-3xl border-none outline-none cursor-pointer;
+    font-family: var(--font-family);
+    min-width: 150px;
+}
+
+@media screen and (max-width: 650px) {
+    .gpt3__cta {
+        @apply flex-col;
+    }
+
+    .gpt3__cta-btn {
+        @apply mt-8 mx-0 mb-0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .gpt3__cta {
+        @apply flex-col my-16 mx-8;
+    }
+
+    .gpt3__cta-content h3 {
+        @apply text-lg;
+    }
+
+    .gpt3__cta-btn button {
+        @apply text-sm;
+    }
+}
+/* Blog CSS */
+.gpt3__blog {
+    @apply flex flex-col;
+}
+
+.gpt3__blog-heading {
+    @apply w-full text-left mb-20;
+}
+
+.gpt3__blog-heading h1 {
+    font-family: var(--font-family);
+    @apply text-6xl font-extrabold;
+}
+
+.gpt3__blog-container {
+    @apply flex flex-row;
+}
+
+.gpt3__blog-container_groupA {
+    flex: 0.75;
+    @apply mr-8;
+}
+
+.gpt3__blog-container_groupB {
+    @apply flex-1 grid grid-cols-2 gap-8;
+}
+
+@media screen and (max-width: 990px) {
+    .gpt3__blog-container {
+        @apply flex-col-reverse;
+    }
+
+
+    .gpt3__blog-container_groupA {
+        @apply my-8 mx-0;
+    }
+
+    .gpt3__blog-container_groupA .gpt3__blog-container_article  {
+        @apply w-6/12;
+    }
+
+    .gpt3__blog-container_groupA .gpt3__blog-container_article-image {
+        @apply h-64;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gpt3__blog-container_groupB {
+        @apply grid-cols-1;
+    }
+
+    .gpt3__blog-container_groupA .gpt3__blog-container_article  {
+        @apply w-full;
+    }
+
+    .gpt3__blog-heading h1 {
+        @apply text-5xl;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .gpt3__blog-heading h1 {
+        @apply text-4xl;
+    }
+
+}
+/* Footer CSS */
+.gpt3__footer {
+    @apply flex flex-col justify-center items-center;
+
+    background: var(--color-footer);
+}
+
+.gpt3__footer-heading {
+    @apply w-full text-center mb-12;
+}
+
+.gpt3__footer-heading h1 {
+    font-family: var(--font-family);
+    @apply text-7xl font-extrabold;
+}
+
+.gpt3__footer-btn {
+    @apply flex justify-center items-center p-4 border-y border-white border-solid mb-2.5 cursor-pointer;
+}
+
+.gpt3__footer-btn p {
+    font-family: var(--font-family);
+    word-spacing: 2px;
+    @apply text-base text-white;
+}
+
+.gpt3__footer-links {
+    @apply flex justify-between items-start flex-row flex-wrap w-full text-left;
+}
+
+.gpt3__footer-links div {
+    @apply w-64 m-4;
+}
+
+.gpt3__footer-links_logo {
+    @apply flex flex-col;
+}
+
+.gpt3__footer-links_logo img {
+    @apply w-28 h-7 mb-4;
+}
+
+.gpt3__footer-links_logo p {
+    font-family: var(--font-family);
+    @apply text-xs text-white;
+}
+
+.gpt3__footer-links_div {
+    @apply flex justify-start flex-col;
+}
+
+.gpt3__footer-links_div h4 {
+    font-family: var(--font-family);
+    @apply text-sm text-white mb-4;
+}
+
+.gpt3__footer-links_div p {
+    font-family: var(--font-family);
+    @apply text-xs text-white my-2 mx-0 cursor-pointer;
+}
+
+.gpt3__footer-copyright {
+    @apply mt-8 w-full text-center;
+}
+
+.gpt3__footer-copyright p {
+    @apply text-xs text-white;
+    font-family: var(--font-family);
+}
+
+@media screen and (max-width: 850px) {
+    .gpt3__footer-heading h1 {
+        @apply text-5xl;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .gpt3__footer-heading h1 {
+        @apply text-4xl;
+    }
+
+    .gpt3__footer-links div {
+        @apply my-4 mx-0; 
+    }
+
+    .gpt3__footer-btn p {
+        @apply text-sm;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .gpt3__footer-heading h1 {
+        @apply text-3xl;
+    }
+}
+
+/* Disclaimer CSS */
+
+.Disclaimer_Box {
+    @apply bg-red-400 text-white border-solid;
+    background-color:var(--color-footer);
+}
+
+.Disclaimer_Box_Top_Row{
+    @apply flex justify-between;
+    
+}
+
+.Disclaimer_Box_Top_Row h1{
+    @apply text-lg font-black;
+}
